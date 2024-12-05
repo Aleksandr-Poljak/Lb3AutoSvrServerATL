@@ -1,0 +1,43 @@
+﻿// Lb3AutoSvr.idl: источник языка IDL для Lb3AutoSvr
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(76026e23-2311-484e-a8ce-f234de6752fd),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyMath : IDispatch
+{
+	[id(1), helpstring("Умножение")] HRESULT Mul([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+
+	[id(2), helpstring("Деление")] HRESULT Div([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+
+	[id(3), helpstring("Сложение")] HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+
+	[id(4), helpstring("Вычитание")] HRESULT Sub([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+};
+[
+	uuid(f92f5ac9-cc34-452f-be6a-4acb94ee541d),
+	version(1.0),
+]
+library Lb3AutoSvrLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(273417bb-be51-45a2-9e8e-f024f41437e5)
+	]
+	coclass MyMath
+	{
+		[default] interface IMyMath;
+	};
+};
+
+import "shobjidl.idl";
