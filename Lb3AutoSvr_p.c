@@ -48,11 +48,11 @@
 
 #include "Lb3AutoSvr_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   7                                 
-#define PROC_FORMAT_STRING_SIZE   193                               
+#define TYPE_FORMAT_STRING_SIZE   71                                
+#define PROC_FORMAT_STRING_SIZE   307                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
-#define WIRE_MARSHAL_TABLE_SIZE   0            
+#define WIRE_MARSHAL_TABLE_SIZE   1            
 
 typedef struct _Lb3AutoSvr_MIDL_TYPE_FORMAT_STRING
     {
@@ -148,7 +148,21 @@ extern const MIDL_STUB_DESC Object_StubDesc;
 extern const MIDL_SERVER_INFO IMyMath_ServerInfo;
 extern const MIDL_STUBLESS_PROXY_INFO IMyMath_ProxyInfo;
 
+#ifdef __cplusplus
+namespace {
+#endif
 
+extern const MIDL_STUB_DESC Object_StubDesc;
+#ifdef __cplusplus
+}
+#endif
+
+
+extern const MIDL_SERVER_INFO IVer_ServerInfo;
+extern const MIDL_STUBLESS_PROXY_INFO IVer_ProxyInfo;
+
+
+extern const USER_MARSHAL_ROUTINE_QUADRUPLE UserMarshalRoutines[ WIRE_MARSHAL_TABLE_SIZE ];
 
 #if !defined(__RPC_WIN32__)
 #error  Invalid build platform for this stub.
@@ -346,6 +360,104 @@ static const Lb3AutoSvr_MIDL_PROC_FORMAT_STRING Lb3AutoSvr__MIDL_ProcFormatStrin
 /* 190 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
+	/* Procedure get_Op1 */
+
+/* 192 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 194 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 198 */	NdrFcShort( 0xb ),	/* 11 */
+/* 200 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 202 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 204 */	NdrFcShort( 0x24 ),	/* 36 */
+/* 206 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x2,		/* 2 */
+/* 208 */	0x8,		/* 8 */
+			0x41,		/* Ext Flags:  new corr desc, has range on conformance */
+/* 210 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 212 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 214 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter pVal */
+
+/* 216 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 218 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 220 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 222 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 224 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 226 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure put_Op1 */
+
+/* 228 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 230 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 234 */	NdrFcShort( 0xc ),	/* 12 */
+/* 236 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 238 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 240 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 242 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x2,		/* 2 */
+/* 244 */	0x8,		/* 8 */
+			0x41,		/* Ext Flags:  new corr desc, has range on conformance */
+/* 246 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 248 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 250 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter newVal */
+
+/* 252 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 254 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 256 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 258 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 260 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 262 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure GetAuthor */
+
+/* 264 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 266 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 270 */	NdrFcShort( 0x7 ),	/* 7 */
+/* 272 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 274 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 276 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 278 */	0x47,		/* Oi2 Flags:  srv must size, clt must size, has return, has ext, */
+			0x3,		/* 3 */
+/* 280 */	0x8,		/* 8 */
+			0x47,		/* Ext Flags:  new corr desc, clt corr check, srv corr check, has range on conformance */
+/* 282 */	NdrFcShort( 0x1 ),	/* 1 */
+/* 284 */	NdrFcShort( 0x1 ),	/* 1 */
+/* 286 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter name */
+
+/* 288 */	NdrFcShort( 0x8b ),	/* Flags:  must size, must free, in, by val, */
+/* 290 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 292 */	NdrFcShort( 0x2a ),	/* Type Offset=42 */
+
+	/* Parameter message */
+
+/* 294 */	NdrFcShort( 0x2113 ),	/* Flags:  must size, must free, out, simple ref, srv alloc size=8 */
+/* 296 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 298 */	NdrFcShort( 0x3c ),	/* Type Offset=60 */
+
+	/* Return value */
+
+/* 300 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 302 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 304 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
 			0x0
         }
     };
@@ -359,10 +471,71 @@ static const Lb3AutoSvr_MIDL_TYPE_FORMAT_STRING Lb3AutoSvr__MIDL_TypeFormatStrin
 			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
 /*  4 */	0x8,		/* FC_LONG */
 			0x5c,		/* FC_PAD */
+/*  6 */	
+			0x12, 0x0,	/* FC_UP */
+/*  8 */	NdrFcShort( 0x18 ),	/* Offset= 24 (32) */
+/* 10 */	
+			0x1b,		/* FC_CARRAY */
+			0x1,		/* 1 */
+/* 12 */	NdrFcShort( 0x2 ),	/* 2 */
+/* 14 */	0x9,		/* Corr desc: FC_ULONG */
+			0x0,		/*  */
+/* 16 */	NdrFcShort( 0xfffc ),	/* -4 */
+/* 18 */	NdrFcShort( 0x1 ),	/* Corr flags:  early, */
+/* 20 */	0x0 , 
+			0x0,		/* 0 */
+/* 22 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 26 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 30 */	0x6,		/* FC_SHORT */
+			0x5b,		/* FC_END */
+/* 32 */	
+			0x17,		/* FC_CSTRUCT */
+			0x3,		/* 3 */
+/* 34 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 36 */	NdrFcShort( 0xffe6 ),	/* Offset= -26 (10) */
+/* 38 */	0x8,		/* FC_LONG */
+			0x8,		/* FC_LONG */
+/* 40 */	0x5c,		/* FC_PAD */
+			0x5b,		/* FC_END */
+/* 42 */	0xb4,		/* FC_USER_MARSHAL */
+			0x83,		/* 131 */
+/* 44 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 46 */	NdrFcShort( 0x4 ),	/* 4 */
+/* 48 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 50 */	NdrFcShort( 0xffd4 ),	/* Offset= -44 (6) */
+/* 52 */	
+			0x11, 0x4,	/* FC_RP [alloced_on_stack] */
+/* 54 */	NdrFcShort( 0x6 ),	/* Offset= 6 (60) */
+/* 56 */	
+			0x13, 0x0,	/* FC_OP */
+/* 58 */	NdrFcShort( 0xffe6 ),	/* Offset= -26 (32) */
+/* 60 */	0xb4,		/* FC_USER_MARSHAL */
+			0x83,		/* 131 */
+/* 62 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 64 */	NdrFcShort( 0x4 ),	/* 4 */
+/* 66 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 68 */	NdrFcShort( 0xfff4 ),	/* Offset= -12 (56) */
 
 			0x0
         }
     };
+
+XFG_TRAMPOLINES(BSTR)
+
+static const USER_MARSHAL_ROUTINE_QUADRUPLE UserMarshalRoutines[ WIRE_MARSHAL_TABLE_SIZE ] = 
+        {
+            
+            {
+            (USER_MARSHAL_SIZING_ROUTINE)XFG_TRAMPOLINE_FPTR(BSTR_UserSize)
+            ,(USER_MARSHAL_MARSHALLING_ROUTINE)XFG_TRAMPOLINE_FPTR(BSTR_UserMarshal)
+            ,(USER_MARSHAL_UNMARSHALLING_ROUTINE)XFG_TRAMPOLINE_FPTR(BSTR_UserUnmarshal)
+            ,(USER_MARSHAL_FREEING_ROUTINE)XFG_TRAMPOLINE_FPTR(BSTR_UserFree)
+            
+            }
+            
+
+        };
+
 
 
 /* Object interface: IUnknown, ver. 0.0,
@@ -386,7 +559,9 @@ static const unsigned short IMyMath_FormatStringOffsetTable[] =
     0,
     48,
     96,
-    144
+    144,
+    192,
+    228
     };
 
 static const MIDL_STUBLESS_PROXY_INFO IMyMath_ProxyInfo =
@@ -410,7 +585,7 @@ static const MIDL_SERVER_INFO IMyMath_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(11) _IMyMathProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(13) _IMyMathProxyVtbl = 
 {
     &IMyMath_ProxyInfo,
     &IID_IMyMath,
@@ -424,7 +599,9 @@ CINTERFACE_PROXY_VTABLE(11) _IMyMathProxyVtbl =
     (void *) (INT_PTR) -1 /* IMyMath::Mul */ ,
     (void *) (INT_PTR) -1 /* IMyMath::Div */ ,
     (void *) (INT_PTR) -1 /* IMyMath::Add */ ,
-    (void *) (INT_PTR) -1 /* IMyMath::Sub */
+    (void *) (INT_PTR) -1 /* IMyMath::Sub */ ,
+    (void *) (INT_PTR) -1 /* IMyMath::get_Op1 */ ,
+    (void *) (INT_PTR) -1 /* IMyMath::put_Op1 */
 };
 
 
@@ -437,6 +614,8 @@ EXTERN_C DECLSPEC_SELECTANY const PRPC_STUB_FUNCTION IMyMath_table[] =
     NdrStubCall2,
     NdrStubCall2,
     NdrStubCall2,
+    NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -444,8 +623,76 @@ CInterfaceStubVtbl _IMyMathStubVtbl =
 {
     &IID_IMyMath,
     &IMyMath_ServerInfo,
-    11,
+    13,
     &IMyMath_table[-3],
+    CStdStubBuffer_DELEGATING_METHODS
+};
+
+
+/* Object interface: IVer, ver. 0.0,
+   GUID={0x16B088A6,0x3B61,0x41CF,{0x89,0x21,0x5F,0x64,0x2C,0xB4,0x08,0xB8}} */
+
+#pragma code_seg(".orpc")
+static const unsigned short IVer_FormatStringOffsetTable[] =
+    {
+    (unsigned short) -1,
+    (unsigned short) -1,
+    (unsigned short) -1,
+    (unsigned short) -1,
+    264
+    };
+
+static const MIDL_STUBLESS_PROXY_INFO IVer_ProxyInfo =
+    {
+    &Object_StubDesc,
+    Lb3AutoSvr__MIDL_ProcFormatString.Format,
+    &IVer_FormatStringOffsetTable[-3],
+    0,
+    0,
+    0
+    };
+
+
+static const MIDL_SERVER_INFO IVer_ServerInfo = 
+    {
+    &Object_StubDesc,
+    0,
+    Lb3AutoSvr__MIDL_ProcFormatString.Format,
+    &IVer_FormatStringOffsetTable[-3],
+    0,
+    0,
+    0,
+    0};
+CINTERFACE_PROXY_VTABLE(8) _IVerProxyVtbl = 
+{
+    &IVer_ProxyInfo,
+    &IID_IVer,
+    IUnknown_QueryInterface_Proxy,
+    IUnknown_AddRef_Proxy,
+    IUnknown_Release_Proxy ,
+    0 /* IDispatch::GetTypeInfoCount */ ,
+    0 /* IDispatch::GetTypeInfo */ ,
+    0 /* IDispatch::GetIDsOfNames */ ,
+    0 /* IDispatch_Invoke_Proxy */ ,
+    (void *) (INT_PTR) -1 /* IVer::GetAuthor */
+};
+
+
+EXTERN_C DECLSPEC_SELECTANY const PRPC_STUB_FUNCTION IVer_table[] =
+{
+    STUB_FORWARDING_FUNCTION,
+    STUB_FORWARDING_FUNCTION,
+    STUB_FORWARDING_FUNCTION,
+    STUB_FORWARDING_FUNCTION,
+    NdrStubCall2
+};
+
+CInterfaceStubVtbl _IVerStubVtbl =
+{
+    &IID_IVer,
+    &IVer_ServerInfo,
+    8,
+    &IVer_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };
 
@@ -468,7 +715,7 @@ static const MIDL_STUB_DESC Object_StubDesc =
     0,
     0x8010274, /* MIDL Version 8.1.628 */
     0,
-    0,
+    UserMarshalRoutines,
     0,  /* notify & notify_flag routine table */
     0x1, /* MIDL flag */
     0, /* cs routines */
@@ -482,23 +729,27 @@ static const MIDL_STUB_DESC Object_StubDesc =
 const CInterfaceProxyVtbl * const _Lb3AutoSvr_ProxyVtblList[] = 
 {
     ( CInterfaceProxyVtbl *) &_IMyMathProxyVtbl,
+    ( CInterfaceProxyVtbl *) &_IVerProxyVtbl,
     0
 };
 
 const CInterfaceStubVtbl * const _Lb3AutoSvr_StubVtblList[] = 
 {
     ( CInterfaceStubVtbl *) &_IMyMathStubVtbl,
+    ( CInterfaceStubVtbl *) &_IVerStubVtbl,
     0
 };
 
 PCInterfaceName const _Lb3AutoSvr_InterfaceNamesList[] = 
 {
     "IMyMath",
+    "IVer",
     0
 };
 
 const IID *  const _Lb3AutoSvr_BaseIIDList[] = 
 {
+    &IID_IDispatch,
     &IID_IDispatch,
     0
 };
@@ -508,14 +759,11 @@ const IID *  const _Lb3AutoSvr_BaseIIDList[] =
 
 int __stdcall _Lb3AutoSvr_IID_Lookup( const IID * pIID, int * pIndex )
 {
-    
-    if(!_Lb3AutoSvr_CHECK_IID(0))
-        {
-        *pIndex = 0;
-        return 1;
-        }
+    IID_BS_LOOKUP_SETUP
 
-    return 0;
+    IID_BS_LOOKUP_INITIAL_TEST( _Lb3AutoSvr, 2, 1 )
+    IID_BS_LOOKUP_RETURN_RESULT( _Lb3AutoSvr, 2, *pIndex )
+    
 }
 
 EXTERN_C const ExtendedProxyFileInfo Lb3AutoSvr_ProxyFileInfo = 
@@ -525,7 +773,7 @@ EXTERN_C const ExtendedProxyFileInfo Lb3AutoSvr_ProxyFileInfo =
     (const PCInterfaceName * ) & _Lb3AutoSvr_InterfaceNamesList,
     (const IID ** ) & _Lb3AutoSvr_BaseIIDList,
     & _Lb3AutoSvr_IID_Lookup, 
-    1,
+    2,
     2,
     0, /* table of [async_uuid] interfaces */
     0, /* Filler1 */

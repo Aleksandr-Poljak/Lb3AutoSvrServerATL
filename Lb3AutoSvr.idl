@@ -23,7 +23,23 @@ interface IMyMath : IDispatch
 	[id(3), helpstring("Сложение")] HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* z);
 
 	[id(4), helpstring("Вычитание")] HRESULT Sub([in] LONG x, [in] LONG y, [out, retval] LONG* z);
+	[propget, id(5), helpstring("Первый параметр")] HRESULT Op1([out, retval] LONG* pVal);
+	[propput, id(5), helpstring("Первый параметр")] HRESULT Op1([in] LONG newVal);
 };
+
+[
+	object,
+		uuid("16B088A6-3B61-41CF-8921-5F642CB408B8"),
+		dual,
+		nonextensible,
+		pointer_default(unique)
+]
+interface IVer : IDispatch
+{
+	
+	[id(1), helpstring("Приветствие клиенту")] HRESULT GetAuthor([in] BSTR name, [out, retval] BSTR* message);
+};
+
 [
 	uuid(f92f5ac9-cc34-452f-be6a-4acb94ee541d),
 	version(1.0),
@@ -37,6 +53,7 @@ library Lb3AutoSvrLib
 	coclass MyMath
 	{
 		[default] interface IMyMath;
+				  interface Iver;
 	};
 };
 

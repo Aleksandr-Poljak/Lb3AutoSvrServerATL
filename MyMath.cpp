@@ -48,3 +48,31 @@ STDMETHODIMP CMyMath::Sub(LONG x, LONG y, LONG* z)
 
 	return S_OK;
 }
+
+
+STDMETHODIMP CMyMath::GetAuthor(BSTR name, BSTR* message)
+{
+	CComBSTR textBSTR("Welcome, ");
+	textBSTR.Append(name);
+	*message = textBSTR;
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CMyMath::get_Op1(LONG* pVal)
+{
+	
+	*pVal = m_lOp1;
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CMyMath::put_Op1(LONG newVal)
+{
+	
+	m_lOp1 = newVal;
+
+	return S_OK;
+}

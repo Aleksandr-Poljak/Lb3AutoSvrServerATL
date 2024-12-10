@@ -22,11 +22,14 @@ class ATL_NO_VTABLE CMyMath :
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CMyMath, &CLSID_MyMath>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IMyMath, &IID_IMyMath, &LIBID_Lb3AutoSvrLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public IDispatchImpl<IMyMath, &IID_IMyMath, &LIBID_Lb3AutoSvrLib, /*wMajor =*/ 1, /*wMinor =*/ 0>,
+	public IDispatchImpl<IVer, &IID_IVer, &LIBID_Lb3AutoSvrLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
+	long m_lOp1;
 public:
 	CMyMath()
 	{
+		m_lOp1 = 1;
 	}
 
 DECLARE_REGISTRY_RESOURCEID(106)
@@ -34,7 +37,8 @@ DECLARE_REGISTRY_RESOURCEID(106)
 
 BEGIN_COM_MAP(CMyMath)
 	COM_INTERFACE_ENTRY(IMyMath)
-	COM_INTERFACE_ENTRY(IDispatch)
+	COM_INTERFACE_ENTRY(IVer)
+	COM_INTERFACE_ENTRY2(IDispatch, IMyMath)
 	COM_INTERFACE_ENTRY(ISupportErrorInfo)
 END_COM_MAP()
 
@@ -61,6 +65,9 @@ public:
 	STDMETHOD(Sub)(LONG x, LONG y, LONG* z);
 
 
+	STDMETHOD(GetAuthor)(BSTR name, BSTR* message);
+	STDMETHOD(get_Op1)(LONG* pVal);
+	STDMETHOD(put_Op1)(LONG newVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(MyMath), CMyMath)
